@@ -91,6 +91,20 @@ Then open this file directly in your browser:
 
 This standalone file already contains all dashboard code and all rows from the census CSV.
 
+## Base44-style offline app (single HTML)
+
+For a more product-like app UI (sidebar, workspace sections, KPI cockpit), build:
+
+```bash
+python3 scripts/build_base44_style_app.py \
+  --input-csv output/greece_acquiring_census_top500_by_vertical.csv \
+  --output-html output/greece_acquiring_census_base44_app.html
+```
+
+Open directly in browser:
+
+- `output/greece_acquiring_census_base44_app.html`
+
 ## Notes
 
 - Some verticals may return fewer than 500 companies if source data is sparse.
