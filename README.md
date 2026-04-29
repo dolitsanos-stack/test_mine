@@ -48,6 +48,33 @@ The script retrieves entities in Greece from OpenStreetMap via Overpass, then:
 python3 scripts/build_greece_acquiring_census.py --output-dir output --top-n 500 --delay-seconds 0.5
 ```
 
+## HTML dashboard app (CEO-ready)
+
+An interactive presentation dashboard is available at:
+
+- `app/index.html`
+
+It includes:
+
+- executive KPI cards
+- vertical coverage summary
+- top opportunities table
+- searchable/filterable lead list
+
+### Launch locally
+
+```bash
+python3 -m http.server 8080
+```
+
+Then open:
+
+- `http://localhost:8080/app/`
+
+The app loads data from:
+
+- `output/greece_acquiring_census_top500_by_vertical.csv`
+
 ## Notes
 
 - Some verticals may return fewer than 500 companies if source data is sparse.
