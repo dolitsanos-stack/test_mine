@@ -75,6 +75,22 @@ The app loads data from:
 
 - `output/greece_acquiring_census_top500_by_vertical.csv`
 
+## One-click offline HTML (no installation, no server)
+
+If you want a single HTML file you can just double-click and present:
+
+```bash
+python3 scripts/build_offline_dashboard.py \
+  --input-csv output/greece_acquiring_census_top500_by_vertical.csv \
+  --output-html output/greece_acquiring_census_dashboard_offline.html
+```
+
+Then open this file directly in your browser:
+
+- `output/greece_acquiring_census_dashboard_offline.html`
+
+This standalone file already contains all dashboard code and all rows from the census CSV.
+
 ## Notes
 
 - Some verticals may return fewer than 500 companies if source data is sparse.
