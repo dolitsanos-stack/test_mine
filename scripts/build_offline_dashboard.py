@@ -460,10 +460,9 @@ def main() -> None:
         rows = list(csv.DictReader(handle))
 
     embedded = json.dumps(rows, ensure_ascii=False, separators=(",", ":"))
-    rendered = (
-        HTML_TEMPLATE.replace("__EMBEDDED_DATA__", embedded).replace(
-            "__GENERATED_AT__", datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
-        )
+    template = HTML_TEMPLATE.replace("{{", "{").replace("}}", "}")
+    rendered = template.replace("__EMBEDDED_DATA__", embedded).replace(
+        "__GENERATED_AT__", datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
     )
     output_html.write_text(rendered, encoding="utf-8")
     print(f"Wrote standalone dashboard: {output_html}")
